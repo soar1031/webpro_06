@@ -6,7 +6,6 @@ app.set('view engine', 'ejs');
 app.use("/public", express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 
-// データ配列
 let movieList = [
     { id: 1, title: "トップガン マーヴェリック", year: 2022, rating: 5, review: "最高傑作！" },
     { id: 2, title: "ショーシャンクの空に", year: 1994, rating: 5, review: "希望を捨てないこと" },
@@ -44,6 +43,27 @@ app.get("/movies/:id", (req, res) => {
     } else {
         res.send("データが見つかりません");
     }
+});
+
+app.get("/movies/edit/:id", (req, res) => {
+    const index = req.params.id;
+    const item = movieList[index];
+    if (item) {
+        res.render('movie_edit', { data: item, id: index });
+    } else {
+        res.redirect('/movies');
+    }
+});
+
+app.post("/movies/update/:id", (req, res) => {
+    const index = req.params.id;
+    if (movieList[index]) {
+        movieList[index].title = req.body.title;
+        movieList[index].year = req.body.year;
+        movieList[index].rating = req.body.rating;
+        movieList[index].review = req.body.review;
+    }
+    res.redirect('/movies');
 });
 
 app.listen(8080, () => console.log("Movie App listening on port 8080!"));
