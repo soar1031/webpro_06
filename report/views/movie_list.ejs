@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>映画レビュー一覧</title>
+</head>
+<body>
+    <h2>映画レビュー一覧</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>公開年</th>
+            <th>評価</th>
+            <th>詳細</th>
+        </tr>
+        <% for(let i = 0; i < data.length; i++) { %>
+            <tr>
+                <td><%= data[i].id %></td>
+                <td><%= data[i].title %></td>
+                <td><%= data[i].year %>年</td>
+                <td>★<%= data[i].rating %></td>
+                <td><a href="/movies/<%= i %>">詳細を見る</a></td>
+            </tr>
+        <% } %>
+    </table>
+    
+    <p></p>
+</body>
+</html>
