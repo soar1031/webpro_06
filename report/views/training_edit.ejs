@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>編集</title>
+</head>
+<body>
+    <h2><%= data.menu %> の編集</h2>
+    <form action="/training/update/<%= id %>" method="POST">
+        <div>
+            <label>種　目: <input type="text" name="menu" value="<%= data.menu %>" required></label>
+        </div>
+        <div>
+            <label>重　量: <input type="number" name="weight" value="<%= data.weight %>" required></label> kg
+        </div>
+        <div>
+            <label>回　数: <input type="number" name="reps" value="<%= data.reps %>" required></label> 回
+        </div>
+        <div>
+            <label>日　付: <input type="date" name="date" value="<%= data.date %>" required></label>
+        </div>
+        <br>
+        <input type="submit" value="更新">
+    </form>
+    <p><a href="/training">一覧に戻る</a></p>
+</body>
+</html>
