@@ -16,5 +16,24 @@ app.get("/novels", (req, res) => {
     res.render('novel_list', { data: novelList });
 });
 
+app.get("/novels/create", (req, res) => {
+    res.render('novel_create');
+});
+
+app.post("/novels", (req, res) => {
+    const newId = novelList.length + 1;
+    
+    const newNovel = {
+        id: newId,
+        title: req.body.title,
+        author: req.body.author,
+        detective: req.body.detective,
+        comment: req.body.comment
+    };
+
+    novelList.push(newNovel);
+
+    res.redirect('/novels');
+});
 
 app.listen(8080, () => console.log("Server is running on port 8080"));
