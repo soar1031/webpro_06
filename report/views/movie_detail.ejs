@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title><%= data.title %> の詳細</title>
+</head>
+<body>
+    <h2><%= data.title %> の詳細</h2>
+    <ul>
+        <li>ID: <%= data.id %></li>
+        <li>タイトル: <%= data.title %></li>
+        <li>公開年: <%= data.year %>年</li>
+        <li>評価: ★<%= data.rating %></li>
+        <li>感想: <%= data.review %></li>
+    </ul>
+    
+    <p>
+        <a href="/movies/edit/<%= id %>">編集する</a> 
+    </p>
+
+    <p><a href="/movies">一覧に戻る</a></p>
+</body>
+</html>
