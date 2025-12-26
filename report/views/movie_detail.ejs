@@ -16,6 +16,8 @@
     
     <p>
         <a href="/movies/edit/<%= id %>">編集する</a> 
+        | 
+        <a href="/movies/delete/<%= id %>" onclick="return confirm('本当に削除しますか？');">削除する</a>
     </p>
 
     <p><a href="/movies">一覧に戻る</a></p>

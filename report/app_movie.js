@@ -45,6 +45,14 @@ app.get("/movies/:id", (req, res) => {
     }
 });
 
+app.get("/movies/delete/:id", (req, res) => {
+    const index = req.params.id;
+    if (movieList[index]) {
+        movieList.splice(index, 1);
+    }
+    res.redirect('/movies');
+});
+
 app.get("/movies/edit/:id", (req, res) => {
     const index = req.params.id;
     const item = movieList[index];
