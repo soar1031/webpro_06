@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>所持小説リスト</title> </head>
+<body>
+    <h2>マイ・ミステリーコレクション</h2> <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>著者</th>
+            <th>操作</th>
+        </tr>
+        <% for(let i = 0; i < data.length; i++) { %>
+            <tr>
+                <td><%= data[i].id %></td>
+                <td><%= data[i].title %></td>
+                <td><%= data[i].author %></td>
+                <td><a href="/novels/<%= i %>">詳細へ</a></td>
+            </tr>
+        <% } %>
+    </table>
+    
+    <p>（ここに後で新規登録ボタンを追加予定）</p>
+</body>
+</html>
