@@ -22,7 +22,6 @@ app.get("/novels/create", (req, res) => {
 
 app.post("/novels", (req, res) => {
     const newId = novelList.length + 1;
-    
     const newNovel = {
         id: newId,
         title: req.body.title,
@@ -30,9 +29,27 @@ app.post("/novels", (req, res) => {
         detective: req.body.detective,
         comment: req.body.comment
     };
-
     novelList.push(newNovel);
+    res.redirect('/novels');
+});
 
+app.get("/novels/:id", (req, res) => {
+    const index = req.params.id;
+    if (isNaN(index)) return res.next(); 
+
+    const item = novelList[index];
+    if (item) {
+        res.render('novel_detail', { data: item, id: index });
+    } else {
+        res.send("その小説は見つかりません");
+    }
+});
+
+app.get("/novels/delete/:id", (req, res) => {
+    const index = req.params.id;
+    if (novelList[index]) {
+        novelList.splice(index, 1);
+    }
     res.redirect('/novels');
 });
 
