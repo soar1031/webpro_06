@@ -6,7 +6,6 @@ app.set('view engine', 'ejs');
 app.use("/public", express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 
-
 let workoutList = [
     { id: 1, menu: "ベンチプレス", weight: 60, reps: 10, date: "2025-01-20" },
     { id: 2, menu: "スクワット", weight: 80, reps: 8, date: "2025-01-22" },
@@ -34,6 +33,7 @@ app.post("/training", (req, res) => {
     res.redirect('/training');
 });
 
+// 4. 詳細表示
 app.get("/training/:id", (req, res) => {
     const index = req.params.id;
     if (isNaN(index)) return res.next();
@@ -44,6 +44,14 @@ app.get("/training/:id", (req, res) => {
     } else {
         res.send("データが見つかりません");
     }
+});
+
+app.get("/training/delete/:id", (req, res) => {
+    const index = req.params.id;
+    if (workoutList[index]) {
+        workoutList.splice(index, 1);
+    }
+    res.redirect('/training');
 });
 
 app.get("/training/edit/:id", (req, res) => {
