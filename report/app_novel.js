@@ -36,4 +36,25 @@ app.post("/novels", (req, res) => {
     res.redirect('/novels');
 });
 
+app.get("/novels/edit/:id", (req, res) => {
+    const index = req.params.id;
+    const item = novelList[index];
+    if (item) {
+        res.render('novel_edit', { data: item, id: index });
+    } else {
+        res.redirect('/novels');
+    }
+});
+
+app.post("/novels/update/:id", (req, res) => {
+    const index = req.params.id;
+    if (novelList[index]) {
+        novelList[index].title = req.body.title;
+        novelList[index].author = req.body.author;
+        novelList[index].detective = req.body.detective;
+        novelList[index].comment = req.body.comment;
+    }
+    res.redirect('/novels');
+});
+
 app.listen(8080, () => console.log("Server is running on port 8080"));
