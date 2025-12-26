@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>筋トレ記録一覧</title>
+</head>
+<body>
+    <h2>筋トレ記録一覧</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>種目</th>
+            <th>重量 (kg)</th>
+            <th>回数 (reps)</th>
+            <th>日付</th>
+            <th>詳細</th>
+        </tr>
+        <% for(let i = 0; i < data.length; i++) { %>
+            <tr>
+                <td><%= data[i].id %></td>
+                <td><%= data[i].menu %></td>
+                <td><%= data[i].weight %>kg</td>
+                <td><%= data[i].reps %>回</td>
+                <td><%= data[i].date %></td>
+                <td><a href="/training/<%= i %>">詳細を見る</a></td>
+            </tr>
+        <% } %>
+    </table>
+    
+    <p>（ここに記録ボタンを追加予定）</p>
+</body>
+</html>
