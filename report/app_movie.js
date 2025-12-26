@@ -13,8 +13,25 @@ let movieList = [
 ];
 
 app.get("/movies", (req, res) => {
-    // 画面には 'data' という名前で movieList を渡す
     res.render('movie_list', { data: movieList });
+});
+
+app.get("/movies/create", (req, res) => {
+    res.render('movie_create');
+});
+
+
+app.post("/movies", (req, res) => {
+    const newId = movieList.length + 1;
+    const newMovie = {
+        id: newId,
+        title: req.body.title,
+        year: req.body.year,
+        rating: req.body.rating,
+        review: req.body.review
+    };
+    movieList.push(newMovie);
+    res.redirect('/movies');
 });
 
 app.listen(8080, () => console.log("Movie App listening on port 8080!"));

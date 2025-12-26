@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>新規登録</title>
+</head>
+<body>
+    <h2>新しい映画レビューを登録</h2>
+    <form action="/movies" method="POST">
+        <div>
+            <label>タイトル: <input type="text" name="title" required></label>
+        </div>
+        <div>
+            <label>公開年: <input type="number" name="year" required></label> 年
+        </div>
+        <div>
+            <label>評　価: <input type="number" name="rating" min="1" max="5" value="3"></label> (1-5)
+        </div>
+        <div>
+            <label>感　想: <input type="text" name="review"></label>
+        </div>
+        <br>
+        <input type="submit" value="登録">
+    </form>
+    <p><a href="/movies">一覧に戻る</a></p>
+</body>
+</html>
