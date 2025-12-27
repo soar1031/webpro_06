@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title><%= data.title %> の詳細</title>
+    <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
-    <h2><%= data.title %> の詳細情報</h2>
+    <h2><%= data.title %> の詳細</h2>
     <ul>
         <li>ID: <%= data.id %></li>
         <li>タイトル: <%= data.title %></li>
-        <li>著者: <%= data.author %></li>
-        <li>探偵役: <%= data.detective %></li>
-        <li>感想: <%= data.comment %></li>
+        <li>公開年: <%= data.year %>年</li>
+        <li>評価: ★<%= data.rating %></li>
+        <li>感想: <%= data.review %></li>
     </ul>
-    
     <p>
-        <a href="/novels/edit/<%= id %>">編集する</a>
-        | 
-        <a href="/novels/delete/<%= id %>" onclick="return confirm('本当に削除しますか？');">削除する</a>
+        <a href="/movies/edit/<%= id %>">編集する</a> [cite: 5]
+        |
+        <a href="/movies/delete/<%= id %>" onclick="return confirm('本当に削除しますか？');">削除する</a> [cite: 6]
     </p>
-
-    <p><a href="/novels">一覧に戻る</a></p>
+    <p><a href="/movies">一覧に戻る</a></p>
 </body>
 </html>

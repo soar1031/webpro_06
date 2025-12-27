@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>映画レビュー一覧</title>
+    <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
     <h2>映画レビュー一覧</h2>
@@ -14,17 +15,16 @@
             <th>評価</th>
             <th>詳細</th>
         </tr>
-        <% for(let i = 0; i < data.length; i++) { %>
+    <% for(let i = 0; i < data.length; i++) { %> [cite: 8]
             <tr>
                 <td><%= data[i].id %></td>
                 <td><%= data[i].title %></td>
                 <td><%= data[i].year %>年</td>
                 <td>★<%= data[i].rating %></td>
-                <td><a href="/movies/<%= i %>">詳細を見る</a></td>
+                <td><a href="/movies/<%= i %>">詳細を見る</a></td> [cite: 9]
             </tr>
         <% } %>
     </table>
-    
-<p><a href="/movies/create">新しいレビューを登録する</a></p>
+    <p><a href="/movies/create">新しいレビューを登録する</a></p>
 </body>
 </html>

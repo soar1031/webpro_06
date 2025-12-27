@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>所持小説リスト</title>
+    <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
     <h2>マイ・ミステリーコレクション</h2>
-    
     <table border="1">
         <tr>
             <th>ID</th>
@@ -14,16 +14,15 @@
             <th>著者</th>
             <th>操作</th>
         </tr>
-        <% for(let i = 0; i < data.length; i++) { %>
+        <% for(let i = 0; i < data.length; i++) { %> [cite: 19]
             <tr>
                 <td><%= data[i].id %></td>
                 <td><%= data[i].title %></td>
                 <td><%= data[i].author %></td>
-                <td><a href="/novels/<%= i %>">詳細へ</a></td>
+                <td><a href="/novels/<%= i %>">詳細へ</a></td> [cite: 20]
             </tr>
         <% } %>
     </table>
-    
     <p><a href="/novels/create">新しい本を登録する</a></p>
 </body>
 </html>

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>新規登録</title>
+    <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
     <h2>新しいミステリー小説を登録</h2>
-    
     <form action="/novels" method="POST">
         <div>
             <label>タイトル: <input type="text" name="title" required></label>
@@ -18,11 +18,11 @@
             <label>探偵役: <input type="text" name="detective"></label>
         </div>
         <div>
-            <label>感　想: <textarea name="comment"></textarea></label> </div>
+            <label>感　想: <textarea name="comment"></textarea></label>
+        </div>
         <br>
         <input type="submit" value="登録する">
     </form>
-    
     <p><a href="/novels">一覧に戻る</a></p>
 </body>
 </html>
