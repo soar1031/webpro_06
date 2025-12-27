@@ -15,13 +15,13 @@
             <th>評価</th>
             <th>詳細</th>
         </tr>
-    <% for(let i = 0; i < data.length; i++) { %> [cite: 8]
+    <% for(let i = 0; i < data.length; i++) { %> 
             <tr>
                 <td><%= data[i].id %></td>
                 <td><%= data[i].title %></td>
                 <td><%= data[i].year %>年</td>
                 <td>★<%= data[i].rating %></td>
-                <td><a href="/movies/<%= i %>">詳細を見る</a></td> [cite: 9]
+                <td><a href="/movies/<%= i %>">詳細を見る</a></td> 
             </tr>
         <% } %>
     </table>

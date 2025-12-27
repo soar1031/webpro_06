@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><%= data.title %> の詳細</title>
+    <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
     <h2><%= data.title %> の詳細</h2>
@@ -16,7 +17,7 @@
     
     <p>
         <a href="/movies/edit/<%= id %>">編集する</a> 
-        | 
+        |
         <a href="/movies/delete/<%= id %>" onclick="return confirm('本当に削除しますか？');">削除する</a>
     </p>
 

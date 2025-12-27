@@ -10,15 +10,15 @@
     <ul>
         <li>ID: <%= data.id %></li>
         <li>タイトル: <%= data.title %></li>
-        <li>公開年: <%= data.year %>年</li>
-        <li>評価: ★<%= data.rating %></li>
-        <li>感想: <%= data.review %></li>
+        <li>著者: <%= data.author %></li>
+        <li>探偵役: <%= data.detective %></li>
+        <li>感想: <%= data.comment %></li>
     </ul>
     <p>
-        <a href="/movies/edit/<%= id %>">編集する</a> [cite: 5]
+        <a href="/novels/edit/<%= id %>">編集する</a> 
         |
-        <a href="/movies/delete/<%= id %>" onclick="return confirm('本当に削除しますか？');">削除する</a> [cite: 6]
+        <a href="/novels/delete/<%= id %>" onclick="return confirm('本当に削除しますか？');">削除する</a>
     </p>
-    <p><a href="/movies">一覧に戻る</a></p>
+    <p><a href="/novels">一覧に戻る</a></p>
 </body>
 </html>
